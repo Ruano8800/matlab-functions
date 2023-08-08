@@ -1,0 +1,128 @@
+Niculaescu
+Oana-Georgiana
+311CB
+
+'contrast.m'
+Functia 'contrast.m' realizeaza citirea unui matrice dintr-un fisier
+de tip 'pgm' primit ca parametru.Se converteste matricea la format double,
+deoarece citirea se realizeaza cu 'imread',unde valoarea maxima poate fi
+doar 255,8 octeti limita.Se afla valoarea minima si valoarea maxima a 
+matricei,apoi se calculeaza diferenta dintre cele doua valori,precum si 
+diferenta dintre cei doi parametrii a si b transmisi o data cu fiserul de
+intrare,astfel operatiile nu vor fi facute de fiecare data cand se incearca
+modificare unei valori din matrice.
+Matricea B preimeste valoarea modificata a matricei C,se scade valoarea 
+minima din fiecare element al matricei C care apoi se inmulteste cu 
+diferenta dintre b si a.Fiecare valoare a matricei B obtinuta se imparte la
+diferenta dintre minimul si maximul matricei originale C si apoi se mareste
+cu valoarea parametrului a.Aplicam castul 'floor' prin care
+fiecare valoare se apoximeaza la cel mai apropiat intreg.
+Pentru a pregati matricea de scriere in fisier aceasta se va inversa,
+deoarece matricea a fost citita pe coloane initial.Se salveaza dimensiunile 
+matricei  inversate si se face scrierea in fisier.
+
+
+
+
+'filter.m'
+Functia 'filter.m' realizeaza citirea unui matrice dintr-un fisier
+de tip 'pgm' primit ca parametru.Se converteste matricea la format double,
+deoarece citirea se realizeaza cu 'imread',unde valoarea maxima poate fi
+doar 255,8 octeti limita.Se afla numarul de linii si de coloane al matricei
+citite din fisier.Se realizeaza bordarea matricei cu 0,deoarece va fi
+necesar calculul valorilor marginale ale matricei dupa diferiti algoritmi.
+
+Daca filtrul transmis ca parametru este 'smooth' atunci aplicam principiul 
+folosit de functia matlab/octave imfilter/conv2: formam o matrice de 3X3
+prin indexarea matricei A dupa numarul de linii si de coloane.Fiecare 
+element din mijlocul matricei de 3X3(elementul numarul 5,fie ca indexarea 
+face dupa linii sau dupa coloane) este suma celorlalte elemente inmultite cu
+un anumit factor de multiplicare [1 1 1; 1 1 1;1 1 1].Matricea B 
+retine valorile modificate ale matricei A.
+Se continua aplicare filtrului 'smooth' prin impartireaa fiecarui element
+al matricei B la 9(asa cum se cere in tema) si adaugarea lui 0 
+si aplicarea castului 'floor'-rotunjire la cel mai apropiat intreg,mai mic 
+decat valoarea curenta.
+Pentru a pregati matricea de scriere in fisier aceasta se va inversa,
+deoarece matricea a fost citita pe coloane initial.Se salveaza dimensiunile 
+matricei  inversate si se face scrierea in fisier.
+
+Daca filtrul transmis ca parametru este 'blur' atunci aplicam principiul 
+folosit de functia matlab/octave imfilter/conv2: formam o matrice de 3X3
+prin indexarea matricei A dupa numarul de linii si de coloane.Fiecare 
+element din mijlocul matricei de 3X3(elementul numarul 5,fie ca indexarea 
+face dupa linii sau dupa coloane) este suma celorlalte elemente inmultite 
+cu un anumit factor de multiplicare [1 2 1;2 4 2;1 2 1].Matricea B 
+retine valorile modificate ale matricei A.
+Se continua aplicare filtrului 'smooth' prin impartireaa fiecarui element
+al matricei B la 16(asa cum se cere in tema)si adaugarea lui 0 
+si aplicarea castului 'floor'-rotunjire la cel mai apropiat intreg,mai mic 
+decat valoarea curenta.
+Pentru a pregati matricea de scriere in fisier aceasta se va inversa,
+deoarece matricea a fost citita pe coloane initial.Se salveaza dimensiunile 
+matricei  inversate si se face scrierea in fisier.
+
+Daca filtrul transmis ca parametru este 'sharpen' atunci aplicam principiul 
+folosit de functia matlab/octave imfilter/conv2: formam o matrice de 3X3
+prin indexarea matricei A dupa numarul de linii si de coloane.Fiecare 
+element din mijlocul matricei de 3X3(elementul numarul 5,fie ca indexarea 
+face dupa linii sau dupa coloane) este suma celorlalte elemente inmultite 
+cu un anumit factor de multiplicare [0 -2 0;-2 11 -2;0 -2 ].Matricea B 
+retine valorile modificate ale matricei A.
+Se continua aplicare filtrului 'smooth' prin impartireaa fiecarui element
+al matricei B la 3(asa cum se cere in tema)si adaugarea lui 0 
+si aplicarea castului 'floor'-rotunjire la cel mai apropiat intreg,mai mic 
+decat valoarea curenta.
+Pentru a pregati matricea de scriere in fisier aceasta se va inversa,
+deoarece matricea a fost citita pe coloane initial.Se salveaza dimensiunile 
+matricei  inversate si se face scrierea in fisier.
+
+Daca filtrul transmis ca parametru este 'emboss' atunci aplicam principiul 
+folosit de functia matlab/octave imfilter/conv2: formam o matrice de 3X3
+prin indexarea matricei A dupa numarul de linii si de coloane.Fiecare 
+element din mijlocul matricei de 3X3(elementul numarul 5,fie ca indexarea 
+face dupa linii sau dupa coloane) este suma celorlalte elemente inmultite 
+cu un anumit factor de multiplicare [-1 0 -1;0 4 0;-1 0 -1].Matricea B 
+retine valorile modificate ale matricei A.
+Se continua aplicare filtrului 'smooth' prin impartireaa fiecarui element
+al matricei B la 16(asa cum se cere in tema)si adaugarea lui 127
+si aplicarea castului 'floor'-rotunjire la cel mai apropiat intreg,mai mic 
+decat valoarea curenta.
+Pentru a pregati matricea de scriere in fisier aceasta se va inversa,
+deoarece matricea a fost citita pe coloane initial.Se salveaza dimensiunile 
+matricei  inversate si se face scrierea in fisier.
+Se inchid fisierele deschise.
+
+
+
+'entropy.m'
+Functia 'entropy.m' realizeaza citirea unui matrice dintr-un fisier
+de tip 'pgm' primit ca parametru.Se converteste matricea la format double,
+deoarece citirea se realizeaza cu 'imread',unde valoarea maxima poate fi
+doar 255,8 octeti limita.Se inverseaza matrice citita,deoarece citirea s-a 
+realizat pe coloane.Se afla numarul de linii si de coloane al matricei
+citite din fisier.Se realizeaza bordarea matricei cu 0,deoarece va fi
+necesar calculul valorilor marginale ale matricei dupa diferiti algoritmi.
+
+Se aplica din nou principul de functionare al functiilor matlab/octave 
+imfilter/conv2 prin care se construieste cu ajutorul indexului matricei 
+initiale matrice de 3x3,fiecare al 5-lea element reprezentand diferenta 
+dintre valoarea curenta a elementului si suma elementelor 1,2 si 4 (din 
+matricea 3x3) amplificate dupa cum urmeaza: elementul 1 cu valoarea 
+parametrului b,elementul 2 cu valoarea parametrului a si elementul 4 cu 
+valoarea parametrului c(a,b,c parametrii transmisi de functie).Se aplica 
+castul 'ceil' de rotunjire la cea mai mare valoarea intreaga apropiata.
+
+Se calculeaza numarul total de valori al matricei originale.
+
+Se sorteaza matricea prelucrata dupa ce s-a liniarizat.Se afla numarul de 
+elemente unice din matrice.Se retine intr-un vector numarul de aparitii al 
+fiecarui element unic in matrice.Se afla numarul de elemente unice in total.
+
+Se calculeaza probabilitatea aparitiei fiecarui element unic in matricea 
+initiala si rezultatul se retine intr-un vector.Se extrage logaritm in baza
+2 din fiecare element al acestui vector.Se face suma tuturor produselor 
+elementelor vectorului de probabilitati cu valorile corespondente 
+logaritmate.Entropia este valoarea acestei sume luata cu minus(-).
+
+Se scrie valoarea entropiei in fisierul deschis,dupa care acesta se inchide.

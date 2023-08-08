@@ -1,0 +1,99 @@
+Evaluare continua
+
+
+Am calculat valoarea functiei Besseli in punctul (0,a) unde a=3,si am generat 
+un vector Nk in care am retinut puteri ale lui 2 pana la 2^10.Am generat N+1 
+puncte aleatoare in intervalul [-pi,pi],puncte in care am calculat valoarea 
+functiei f.
+
+Polinomul de interpolare Lagrange
+
+Polinomul de interpolare lagrange converge pentru o toleranta eps=0.16
+Am calculat coeficientii polinoamelor de interpolare Lagrange de grad Nk(i)-1,
+unde Nk este vectorul demai sus,iar punctele in care am calculat acesti 
+coeficienti sunt Nk(i)+1,puncte generate aleator tot in intervalul [-pi,pi].
+Am calculat valaorea fiecaruia dintre aceste polinoame in fiecare din cel
+N+1 puncte genearate anterior.Apoi am calculat eroarea realizata la aproximarea
+functiei cu fiecare dintre aceste polinoame.Daca eroarea din pasul anterior
+este mai mica decat eroarea generata in pasul curent si daca diferenta in modul
+dintre aceste doua erori este mai mica decat toleranta maxima acceptata eps,
+atunci metoda converge si functia intoarce ca rezultat numarul punctelor de 
+interpolare pentru care converge.In caz contrar metoda nun converge si functia
+MATLAB intoarce ca rezultat infinit.
+
+Polinomul de interpolare Newton
+
+Polinomul de interpolare Newton converge pentru o toleranta eps=0.16.
+Am calculat coeficientii polinoamelor de interpolare Newton de grad Nk(i)-1,
+unde Nk este vectorul demai sus,iar punctele in care am calculat acesti 
+coeficienti sunt Nk(i)+1,puncte generate aleator tot in intervalul [-pi,pi].
+Am calculat valaorea fiecaruia dintre aceste polinoame in fiecare din cel
+N+1 puncte genearate anterior.Apoi am calculat eroarea realizata la aproximarea
+functiei cu fiecare dintre aceste polinoame.Daca eroarea din pasul anterior
+este mai mica decat eroarea generata in pasul curent si daca diferenta in modul
+dintre aceste doua erori este mai mica decat toleranta maxima acceptata eps,
+atunci metoda converge si functia intoarce ca rezultat numarul punctelor de 
+interpolare pentru care converge.In caz contrar metoda nun converge si functia
+MATLAB intoarce ca rezultat infinit.
+
+Linear Spline
+
+Functiile spline liniare converg pentru o toleranta de 0.1.
+Am generat Nk(i) puncte aleatoare in intervalul [-pi,pi],puncte in care am calculat
+valoarea functiei f.apoi am calculat coeficientii fiecarui spline de forma s=ax+b 
+tinand cont de acesti coeficienti.Am calculat valoarea functiilor spline in fiecare
+din cele N+1 puncte generate anterior precum si eroarea comisa atunci cand 
+se aproximeaza valaorea functiei f cu cea a functiei spline.Daca eroarea din pasul anterior
+este mai mica decat eroarea generata in pasul curent si daca diferenta in modul
+dintre aceste doua erori este mai mica decat toleranta maxima acceptata eps,
+atunci metoda converge si functia intoarce ca rezultat numarul punctelor de 
+interpolare pentru care converge.In caz contrar metoda nun converge si functia
+MATLAB intoarce ca rezultat infinit.
+
+Natural Spline
+
+Functiile spline naturale converg pentru o toleranta de 0.000001.
+Am generat Nk(i) puncte aleatoare in intervalul [-pi,pi],puncte in care am calculat
+valoarea functiei f,apoi am calculat coeficientii fiecarui spline impreuna cu 
+conditiile de spline natural de clasa C2.
+Am calculat valoarea functiilor spline in fiecare
+din cele N+1 puncte generate anterior precum si eroarea comisa atunci cand 
+se aproximeaza valaorea functiei f cu cea a functiei spline.Daca eroarea din pasul anterior
+este mai mica decat eroarea generata in pasul curent si daca diferenta in modul
+dintre aceste doua erori este mai mica decat toleranta maxima acceptata eps,
+atunci metoda converge si functia intoarce ca rezultat numarul punctelor de 
+interpolare pentru care converge.In caz contrar metoda nun converge si functia
+MATLAB intoarce ca rezultat infinit.
+
+Cubic Spline 
+
+Functiile spline cubice converg pentru o toleranta de 0.000001
+Am generat Nk(i) puncte aleatoare in intervalul [-pi,pi],puncte in care am 
+calculat valoarea functiei f,apoi am calculat coeficientii fiecarui spline 
+cubic de forma s=c1+c2*(x-x1)+c3*(x-x1)^2+c4*(x-x1)^3.
+Am calculat valoarea functiilor spline in fiecare
+din cele N+1 puncte generate anterior precum si eroarea comisa atunci cand 
+se aproximeaza valaorea functiei f cu cea a functiei spline.Daca eroarea din pasul anterior
+este mai mica decat eroarea generata in pasul curent si daca diferenta in modul
+dintre aceste doua erori este mai mica decat toleranta maxima acceptata eps,
+atunci metoda converge si functia intoarce ca rezultat numarul punctelor de 
+interpolare pentru care converge.In caz contrar metoda nun converge si functia
+MATLAB intoarce ca rezultat infinit.
+
+Fourrier
+
+Metoda Fourrier converge pentru o toleranta de 0.1.
+Am generat Nk(i) puncte aleatoare in intervalul [-pi,pi],puncte in care am 
+calculat valoarea functiei f,apoi am calculat coeficientii polinomului de interpolare
+trigonometric.
+Am calculat valoarea functiilor spline in fiecare
+din cele N+1 puncte generate anterior precum si eroarea comisa atunci cand 
+se aproximeaza valaorea functiei f cu cea a functiei spline.Daca eroarea din pasul anterior
+este mai mica decat eroarea generata in pasul curent si daca diferenta in modul
+dintre aceste doua erori este mai mica decat toleranta maxima acceptata eps,
+atunci metoda converge si functia intoarce ca rezultat numarul punctelor de 
+interpolare pentru care converge.In caz contrar metoda nun converge si functia
+MATLAB intoarce ca rezultat infinit.
+
+Evaluare discreta - functia nu este implmentata,sunt scrise doar liniile de cod 
+de inceput.

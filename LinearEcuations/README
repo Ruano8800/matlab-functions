@@ -1,0 +1,55 @@
+Niculaescu
+Oana-Georgiana
+311CB
+
+Iterative.m
+Se formeaza o matrice de adiacenta de dimensiune NxN care se completeaza 
+astfel: acolo unde exista o legatura in graf intre nodul i si nodul j se 
+pune 1 in matrice,restul ramanand zero.Pentru completarea matricei de 
+adiacenta se citeste vectorul de vecini ai nodului j,se sorteaza si se 
+selecteaza numai elementele unice din acesta,apoi se completeaza matrice cu
+1 in pozitiile respective.Matricea de adiacenta trebuie sa aiba 0 pe 
+diagonala principala si de aceaa se scade din matricea diagonala valorile 
+de pe diagonala acesteia.
+Vecotrul PR este initializat cu 1/nuamrul de noduri.Se calculeaza suma pe 
+linii in matrice de adiacenta.Se realizeaza o matrice diagonala cu aceste 
+valori.Calculam matricea M ca produs dintre matricea diagonala calculata si
+matricea de adiacenta si transpunem M.Se calculeaza valoarea page rank'ului 
+conform algoritmului pus la dispozitie.se scrie in fisier.
+
+Algebraic.m
+Se formeaza o matrice de adiacenta de dimensiune NxN care se completeaza 
+astfel: acolo unde exista o legatura in graf intre nodul i si nodul j se 
+pune 1 in matrice,restul ramanand zero.Pentru completarea matricei de 
+adiacenta se citeste vectorul de vecini ai nodului j,se sorteaza si se 
+selecteaza numai elementele unice din acesta,apoi se completeaza matrice cu
+1 in pozitiile respective.Matricea de adiacenta trebuie sa aiba 0 pe 
+diagonala principala si de aceaa se scade din matricea diagonala valorile 
+de pe diagonala acesteia.
+Matricea T este matricea ce trebuie ortogonalizata.Se aplica algoritmul 
+Gram-Schmidt de ortogonalizare si se obtine matrice Q ortogonala si matricea
+R superior triunghiulara.Gram-Schmidt si factorizarea QR ne permit rezolvare 
+unui sistem supradeterminat de ecuatii.Matricea T este produsul dintre 
+matricea Q ortogonalizata: Q^T(i)*Q(j)=1,daca i=j sau 0 altfel,si R matrice 
+superior triunghiulara.Vectorul termenilor liberi pentru rezolvarea 
+sistemului superior triunghiular este fiecare coloana a matricei ortogonale 
+Q'.Se calculeaza intai ultima valoare a sistemului superior triunghiular 
+deoarece este unic determinata,nu depinde de nicio necunoscuta in plus.Apoi
+se calculeaza restul valorilor de la N-1 la 1 pentru fiecare vector coloana 
+in parte.
+Vectorul de page rank este produsul dintre w-matricea solutiilor sistemului
+superior triunghiular pentru fiecare coloana a matricei Q' factorul f si 
+vectorul unitate.
+
+tema2.m
+Se citeste din fisier numarul de noduri si se citeste fiecare nod i precum 
+si vecinii sai,pentru a putea ajunge la valorile val1 si val2 necesare 
+functiei u(x)=ax+b.Se citesc cele doua valori si se calculeaza 'a' si 'b' 
+astfel incat functia u(x0 sa fie continua.Se scriu in fisier rezultatele 
+intoarse de functia Iterative.m si Algebraic.m.Se sprteaza vectorul intors 
+de fucntia Algebraic.m in ordine descrescatoare.Se cauta valoarea curenta 
+din vectorul sortat in vecotrul nesortat si se retine pozitia lui initiala,
+vectorul 'u' retine valorile corespunzatoare pentru fiecare nod i-unde u 
+calculeaza gradul de apartenenta al paginii i la multimea 'paginilor importante'.
+Se scrie in fisier pozitia paginii in vectorul sortat,pozitia sa initiala 
+precum si gradul de apartenenta.
